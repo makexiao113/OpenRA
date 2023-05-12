@@ -81,7 +81,15 @@ else
 ifeq ($(UNAME_M),aarch64)
 TARGETPLATFORM = linux-arm64
 else
+ifeq ($(UNAME_M),loongarch64)
+TARGETPLATFORM = loongarch64
+else
+ifeq ($(UNAME_M),loong64)
+TARGETPLATFORM = loong64
+else
 TARGETPLATFORM = unix-generic
+endif
+endif
 endif
 endif
 endif
